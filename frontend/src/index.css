@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-border rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Glow Effects */
+.glow-emerald {
+  filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.3));
+}
+
+.glow-cyan {
+  filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.3));
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  @apply bg-brand-card bg-opacity-70 border border-brand-border shadow-glass rounded-2xl backdrop-blur-md;
+}
+
+.glass-input {
+  @apply bg-[#0c1224] bg-opacity-50 border border-brand-border text-slate-200 placeholder-slate-500 rounded-xl focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all duration-300;
+}
+
+/* Animations */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite ease-in-out;
+}
